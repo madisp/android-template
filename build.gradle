@@ -1,17 +1,18 @@
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:3.0.1'
     }
 }
 
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 26
+    buildToolsVersion '27.0.1'
 
     defaultConfig {
         applicationId 'com.madisp.template'
@@ -20,8 +21,13 @@ android {
         versionCode 1
         versionName '1.0'
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.5'
+    gradleVersion = '4.3.1'
 }
